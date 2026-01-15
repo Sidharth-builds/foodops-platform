@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="logo" onclick="goHome()">🍽 FoodRescue</div>
+  <div class="nav-links">
+    <a href="how.html">How it works</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</div>
+
+<div class="login-page">
+  <div class="login-box" id="choiceBox">
+    <h2>Welcome</h2>
+    <button onclick="showLogin()">Login</button>
+    <button onclick="showSignup()">Create Account</button>
+  </div>
+
+  <div class="login-box" id="loginBox" style="display:none;">
+    <input id="loginEmail" placeholder="Email">
+    <input id="loginPass" type="password" placeholder="Password">
+    <button onclick="doLogin()">Login</button>
+  </div>
+
+  <div class="login-box" id="signupBox" style="display:none;">
+    <input id="signupEmail" placeholder="Email">
+    <input id="signupPass" type="password" placeholder="Password">
+    <select id="signupRole">
+      <option value="provider">Provider</option>
+      <option value="ngo">NGO</option>
+    </select>
+    <button onclick="doSignup()">Sign Up</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

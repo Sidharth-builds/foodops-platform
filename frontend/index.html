@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Food Rescue</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="logo" onclick="goHome()">🍽 FoodRescue</div>
+ <div class="nav-links">
+  <a href="how.html">How it works</a>
+  <a href="contact.html">Contact</a>
+  <button class="btn-solid" onclick="goLogin('provider')">Donate Food</button>
+  <button class="btn-solid" onclick="goLogin('ngo')">Get Food</button>
+</div>
+
+</div>
+
+<div class="hero">
+  <div class="hero-content">
+    <span class="tag">Fighting food waste, feeding communities</span>
+    <h1>Rescue Food,<br><span>Nourish Lives</span></h1>
+    <p>We connect surplus food from restaurants, hotels and caterers with NGOs.</p>
+    <div class="hero-buttons">
+      <button class="btn-solid" onclick="goLogin('ngo')">Find Food Near You</button>
+      <button class="btn-solid" onclick="goLogin('provider')">Donate Surplus Food</button>
+    </div>
+  </div>
+</div>
+<div class="logo" onclick="goHome()">🍽 FoodRescue</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
