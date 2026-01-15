@@ -1,20 +1,65 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Provider</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Provider Dashboard - Food Rescue</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body style="background-color: #f9fafb;">
 
-<div class="topbar">
-  <div class="logo" onclick="goHome()">🍽 FoodRescue</div>
+<nav class="topbar">
+  <div class="logo" onclick="goHome()">
+    <span>🍽</span> FoodRescue
+  </div>
   <div class="nav-links">
-    <a href="#" onclick="logout()">Logout</a>
+    <span style="color: var(--gray); font-size: 0.9rem;">My Provider Account</span>
+    <button class="btn-outline" onclick="logout()">Logout</button>
+  </div>
+</nav>
+
+<div class="dashboard-container">
+  <div class="dashboard-header">
+    <div>
+      <h1>My Donations</h1>
+      <p style="color: var(--gray);">Track your contributions and impact</p>
+    </div>
+    <button class="btn-solid" onclick="alert('Open form to add donation')">+ New Donation</button>
+  </div>
+
+  <div class="dashboard-grid">
+    <div class="card" style="border-left: 5px solid var(--primary);">
+      <h3>Total Impact</h3>
+      <h2 style="font-size: 2.5rem; color: var(--primary);">150+</h2>
+      <p style="color: var(--gray);">Meals donated so far</p>
+    </div>
+
+    <!-- Active Donation -->
+    <div class="card">
+      <div style="display:flex; justify-content:space-between; margin-bottom:1rem;">
+        <span class="status-badge status-active">Active Listing</span>
+        <span style="color:var(--gray); font-size:0.9rem;">Just now</span>
+      </div>
+      <h3>Lunch Surplus</h3>
+      <p style="color:var(--gray); margin-bottom:1rem;">Status: <strong>Waiting for NGO</strong></p>
+      <p style="margin-bottom:1.5rem;">Quantity: ~30 meals</p>
+      <button class="btn-outline" style="width:100%; border:1px solid #ef4444; color:#ef4444;" onclick="alert('Cancelled')">Cancel Listing</button>
+    </div>
+
+    <!-- History -->
+    <div class="card" style="opacity: 0.8;">
+      <div style="display:flex; justify-content:space-between; margin-bottom:1rem;">
+        <span class="status-badge" style="background:var(--light); color:var(--gray);">Completed</span>
+        <span style="color:var(--gray); font-size:0.9rem;">Yesterday</span>
+      </div>
+      <h3>Dinner Leftovers</h3>
+      <p style="color:var(--gray); margin-bottom:1rem;">Picked up by: <strong>Hope Foundation</strong></p>
+      <p style="margin-bottom:1.5rem;">Quantity: ~45 meals</p>
+      <button class="btn-outline" style="width:100%;" disabled>View Receipt</button>
+    </div>
   </div>
 </div>
 
-<div class="hero"><h1>Provider Dashboard</h1></div>
-
-<script type="module" src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

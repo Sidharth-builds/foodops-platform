@@ -1,20 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>NGO</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NGO Dashboard - Food Rescue</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body style="background-color: #f9fafb;">
 
-<div class="topbar">
-  <div class="logo" onclick="goHome()">🍽 FoodRescue</div>
+<nav class="topbar">
+  <div class="logo" onclick="goHome()">
+    <span>🍽</span> FoodRescue
+  </div>
   <div class="nav-links">
-    <a href="#" onclick="doLogout()">Logout</a>
+    <span style="color: var(--gray); font-size: 0.9rem;">My NGO Account</span>
+    <button class="btn-outline" onclick="logout()">Logout</button>
+  </div>
+</nav>
+
+<div class="dashboard-container">
+  <div class="dashboard-header">
+    <div>
+      <h1>Available Food Donations</h1>
+      <p style="color: var(--gray);">Real-time listings from nearby providers</p>
+    </div>
+    <button class="btn-solid" onclick="alert('Ideally this would refresh the list')">Refresh List</button>
+  </div>
+
+  <div class="dashboard-grid">
+    <!-- Placeholders -->
+    <div class="card">
+      <div style="display:flex; justify-content:space-between; margin-bottom:1rem;">
+        <span class="status-badge status-active">Available</span>
+        <span style="color:var(--gray); font-size:0.9rem;">2 mins ago</span>
+      </div>
+      <h3>Fresh Veggies & Rice</h3>
+      <p style="color:var(--gray); margin-bottom:1rem;">From: <strong>Paradise Hotel</strong><br>Location: Banjara Hills</p>
+      <p style="margin-bottom:1.5rem;">Quantity: ~50 servings</p>
+      <button class="btn-solid" style="width:100%;" onclick="alert('Food Claimed!')">Claim Donation</button>
+    </div>
+
+    <div class="card">
+      <div style="display:flex; justify-content:space-between; margin-bottom:1rem;">
+        <span class="status-badge status-active">Available</span>
+        <span style="color:var(--gray); font-size:0.9rem;">15 mins ago</span>
+      </div>
+      <h3>Surplus Bakery Items</h3>
+      <p style="color:var(--gray); margin-bottom:1rem;">From: <strong>Karachi Bakery</strong><br>Location: Gachibowli</p>
+      <p style="margin-bottom:1.5rem;">Quantity: ~20 packets</p>
+      <button class="btn-solid" style="width:100%;" onclick="alert('Food Claimed!')">Claim Donation</button>
+    </div>
+
+    <div class="card">
+      <div style="display:flex; justify-content:space-between; margin-bottom:1rem;">
+        <span class="status-badge status-active">Available</span>
+        <span style="color:var(--gray); font-size:0.9rem;">1 hour ago</span>
+      </div>
+      <h3>Wedding Buffet Surplus</h3>
+      <p style="color:var(--gray); margin-bottom:1rem;">From: <strong>Novotel Convention</strong><br>Location: Hitech City</p>
+      <p style="margin-bottom:1.5rem;">Quantity: ~100 servings</p>
+      <button class="btn-solid" style="width:100%;" onclick="alert('Food Claimed!')">Claim Donation</button>
+    </div>
   </div>
 </div>
 
-<div class="hero"><h1>NGO Dashboard</h1></div>
-
-<script type="module" src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

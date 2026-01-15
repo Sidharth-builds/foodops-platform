@@ -1,6 +1,3 @@
-import { signup, login } from "../integrations/auth.js";
-
-
 function goLogin(role){
   localStorage.setItem("selectedRole", role);
   window.location.href = "login.html";
@@ -15,40 +12,70 @@ function goHome(){
   }
 }
 
-function showLogin(){ choiceBox.style.display="none"; loginBox.style.display="block"; }
-function showSignup(){ choiceBox.style.display="none"; signupBox.style.display="block"; }
+function showLogin(){
+  document.getElementById("choiceBox").style.display="none";
+  document.getElementById("loginBox").style.display="block";
+}
 
-async function doSignup(){
-  try {
-    await signup(signupEmail.value, signupPass.value);
-    localStorage.setItem("isLoggedIn","true");
-    localStorage.setItem("role", signupRole.value);
-    goHome();
-  } catch (err) {
-    alert(err.message);
+function showSignup(){
+  document.getElementById("choiceBox").style.display="none";
+  document.getElementById("signupBox").style.display="block";
+  
+  // Auto-select role if passed from previous page
+  let selectedRole = localStorage.getItem("selectedRole");
+  if(selectedRole){
+    document.getElementById("signupRole").value = selectedRole;
+    // Clear it so it doesn't persist forever
+    localStorage.removeItem("selectedRole");
   }
 }
 
+function doSignup(){
+  let email = document.getElementById("signupEmail").value;
+  let pass = document.getElementById("signupPass").value;
+  let role = document.getElementById("signupRole").value;
 
-async function doLogin(){
-  try {
-    await login(loginEmail.value, loginPass.value);
-    localStorage.setItem("isLoggedIn","true");
-    localStorage.setItem("role", localStorage.getItem("selectedRole"));
-    goHome();
-  } catch (err) {
-    alert("Invalid login credentials");
+  if(!email || !pass || !role) {
+    alert("Please fill all fields");
+    return;
   }
+
+  let users = JSON.parse(localStorage.getItem("users")||"[]");
+  if(users.some(u => u.email === email)) {
+    alert("Email already registered");
+    return;
+  }
+
+  users.push({email, pass, role});
+  localStorage.setItem("users", JSON.stringify(users));
+  
+  // Auto login
+  localStorage.setItem("isLoggedIn","true");
+  localStorage.setItem("role", role);
+  goHome();
 }
 
+function doLogin(){
+  let email = document.getElementById("loginEmail").value;
+  let pass = document.getElementById("loginPass").value;
 
-function doLogout(){
-  localStorage.clear();
-  window.location.href="login.html";
+  if(!email || !pass) {
+    alert("Please enter email and password");
+    return;
+  }
+
+  let users = JSON.parse(localStorage.getItem("users")||"[]");
+  let user = users.find(u=>u.email===email && u.pass===pass);
+  
+  if(!user) return alert("Invalid email or password");
+  
+  localStorage.setItem("isLoggedIn","true");
+  localStorage.setItem("role", user.role);
+  goHome();
 }
 
-window.showLogin = showLogin;
-window.showSignup = showSignup;
-window.doLogin = doLogin;
-window.doSignup = doSignup;
-window.doLogout = doLogout;
+function logout(){
+  localStorage.removeItem("isLoggedIn");
+  localStorage.removeItem("role");
+  window.location.href="index.html";
+}
