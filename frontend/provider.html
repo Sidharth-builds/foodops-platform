@@ -1,19 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Provider</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Provider Dashboard - Food Rescue</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<div class="topbar">
-  <div class="logo" onclick="goHome()">🍽 FoodRescue</div>
+<nav class="topbar">
+  <div class="logo">🍽 FoodRescue</div>
   <div class="nav-links">
     <a href="#" onclick="logout()">Logout</a>
   </div>
-</div>
+</nav>
 
-<div class="hero"><h1>Provider Dashboard</h1></div>
+<div class="container">
+  <h2>Post Food</h2>
+
+  <div class="form-group">
+    <input id="foodTitle" type="text" placeholder="Food Name" />
+  </div>
+
+  <div class="form-group">
+    <input id="foodQty" type="text" placeholder="Quantity (e.g. 20 plates)" />
+  </div>
+
+  <div class="form-group">
+    <input id="foodLoc" type="text" placeholder="Pickup Location" />
+  </div>
+
+  <button class="btn-solid" onclick="postFood()">Post Food</button>
+
+  <hr style="margin: 2rem 0;" />
+
+  <h2>My Posted Food</h2>
+  <div id="foodList"></div>
+</div>
 
 <script type="module" src="script.js"></script>
 </body>

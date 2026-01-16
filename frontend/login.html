@@ -1,44 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Login</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Food Rescue</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="topbar">
-  <div class="logo" onclick="goHome()">🍽 FoodRescue</div>
+<nav class="topbar">
+  <div class="logo" onclick="goHome()">
+    <span>🍽</span> FoodRescue
+  </div>
   <div class="nav-links">
     <a href="how.html">How it works</a>
     <a href="contact.html">Contact</a>
   </div>
-</div>
+</nav>
 
 <div class="login-page">
   <div class="login-box" id="choiceBox">
-    <h2>Welcome</h2>
-    <button onclick="showLogin()">Login</button>
-    <button onclick="showSignup()">Create Account</button>
+    <h2>Welcome Back</h2>
+    <p style="margin-bottom: 2rem; color: var(--gray);">Please choose your role to continue</p>
+    <button class="btn-solid" onclick="showLogin()">Login</button>
+    <button class="btn-outline" style="margin-top: 1rem; width: 100%;" onclick="showSignup()">Create Account</button>
   </div>
 
   <div class="login-box" id="loginBox" style="display:none;">
-    <input id="loginEmail" placeholder="Email">
-    <input id="loginPass" type="password" placeholder="Password">
-    <button onclick="doLogin()">Login</button>
+    <h2>Login</h2>
+    <div class="form-group">
+      <input id="loginEmail" type="email" placeholder="Email Address">
+    </div>
+    <div class="form-group">
+      <input id="loginPass" type="password" placeholder="Password">
+    </div>
+    <button class="btn-solid" onclick="doLogin()">Login</button>
+    <button class="btn-outline" style="margin-top: 0.5rem; width: 100%; border: none;" onclick="location.reload()">Back</button>
   </div>
 
   <div class="login-box" id="signupBox" style="display:none;">
-    <input id="signupEmail" placeholder="Email">
-    <input id="signupPass" type="password" placeholder="Password">
-    <select id="signupRole">
-      <option value="provider">Provider</option>
-      <option value="ngo">NGO</option>
-    </select>
-    <button onclick="doSignup()">Sign Up</button>
+    <h2>Create Account</h2>
+    <div class="form-group">
+      <input id="signupEmail" type="email" placeholder="Email Address">
+    </div>
+    <div class="form-group">
+      <input id="signupPass" type="password" placeholder="Password">
+    </div>
+    <div class="form-group">
+      <select id="signupRole">
+        <option value="" disabled selected>Select Role</option>
+        <option value="provider">Food Provider (Restaurant/Hotel)</option>
+        <option value="ngo">NGO / Charity</option>
+      </select>
+    </div>
+    <button class="btn-solid" onclick="doSignup()">Sign Up</button>
+    <button class="btn-outline" style="margin-top: 0.5rem; width: 100%; border: none;" onclick="location.reload()">Back</button>
   </div>
 </div>
 
 <script type="module" src="script.js"></script>
-
 </body>
 </html>

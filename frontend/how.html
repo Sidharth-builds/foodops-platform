@@ -1,63 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>How It Works – Food Rescue</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <!-- NAVBAR -->
-<div class="topbar">
-  <div class="logo" onclick="goHome()">🍽 FoodRescue</div>
-  <div class="nav-links">
-    <a href="how.html">How it works</a>
-    <a href="contact.html">Contact</a>
+<nav class="topbar">
+  <div class="logo" onclick="goHome()">
+    <span>🍽</span> FoodRescue
   </div>
-</div>
+  <div class="nav-links">
+    <a href="how.html" style="color: var(--primary);">How it works</a>
+    <a href="contact.html">Contact</a>
+    <button class="btn-outline" onclick="goLogin('provider')">Donate Food</button>
+    <button class="btn-solid" onclick="goLogin('ngo')">Get Food</button>
+  </div>
+</nav>
 
 <!-- HERO -->
-<div class="page-hero">
+<header class="page-hero">
   <h1>How Food Rescue Works</h1>
-  <p>Simple steps. Big impact.</p>
-</div>
+  <p>Simple steps. Big impact. Together we can end hunger.</p>
+</header>
 
 <!-- CONTENT -->
-<div class="page-content">
+<main class="page-content">
 
   <div class="step">
-    <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80">
-    <div>
+    <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80" alt="Food preparation">
+    <div class="step-content">
       <h3>1. Providers Post Surplus Food</h3>
       <p>
-        Restaurants, hotels and caterers list surplus food before it goes to waste.
-        This helps reduce food loss and save perfectly good meals.
+        Restaurants, hotels, and caterers list surplus food details on our platform before it goes to waste.
+        This helps reduce food loss and save perfectly good meals from landfills.
       </p>
     </div>
   </div>
 
   <div class="step">
-    <img src="https://images.unsplash.com/photo-1593113630400-ea4288922497?auto=format&fit=crop&w=800&q=80">
-    <div>
+    <img src="https://images.unsplash.com/photo-1593113630400-ea4288922497?auto=format&fit=crop&w=800&q=80" alt="App notification">
+    <div class="step-content">
       <h3>2. NGOs Get Notified Instantly</h3>
       <p>
-        Nearby NGOs receive alerts and can accept the food in real time,
-        ensuring fast and efficient pickup.
+        Nearby verified NGOs receive real-time alerts about available food. They can claim the food immediately, ensuring fast and efficient pickup coordination.
       </p>
     </div>
   </div>
 
   <div class="step">
-    <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=80">
-    <div>
+    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80" alt="Food delivery">
+    <div class="step-content">
       <h3>3. Food Is Delivered to Those in Need</h3>
       <p>
-        The food is collected and delivered to shelters, orphanages,
-        and families who need it most.
+        The food is collected and distributed to shelters, orphanages, and families who need it most, completing the cycle of kindness and sustainability.
       </p>
     </div>
   </div>
 
-</div>
+</main>
 
 <script type="module" src="script.js"></script>
 </body>

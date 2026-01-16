@@ -1,55 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us – Food Rescue</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <!-- NAVBAR -->
-<div class="topbar">
-  <div class="logo" onclick="goHome()">🍽 FoodRescue</div>
+<nav class="topbar">
+  <div class="logo" onclick="goHome()">
+    <span>🍽</span> FoodRescue
+  </div>
   <div class="nav-links">
     <a href="how.html">How it works</a>
-    <a href="contact.html">Contact</a>
+    <a href="contact.html" style="color: var(--primary);">Contact</a>
+    <button class="btn-outline" onclick="goLogin('provider')">Donate Food</button>
+    <button class="btn-solid" onclick="goLogin('ngo')">Get Food</button>
   </div>
-</div>
+</nav>
 
 <!-- HERO -->
-<div class="page-hero">
+<header class="page-hero">
   <h1>Contact Us</h1>
-  <p>We are here to help you.</p>
-</div>
+  <p>We are here to help you. Reach out to us for any queries.</p>
+</header>
 
 <!-- CONTENT -->
-<div class="page-content">
+<main class="page-content">
+  <div class="contact-grid">
+    <div class="contact-card">
+      <h3>📍 Our Office</h3>
+      <p>
+        Food Rescue Foundation <br>
+        3rd Floor, Green Tower, <br>
+        MG Road, Hyderabad – 560001
+      </p>
+    </div>
 
-  <h3>📍 Our Office</h3>
-  <p>
-    Food Rescue Foundation <br>
-    3rd Floor, Green Tower, <br>
-    MG Road, Hyderabad – 560001, India
-  </p>
+    <div class="contact-card">
+      <h3>📞 Phone</h3>
+      <p>
+        <a href="tel:+919876543210">+91 98765 43210</a> <br>
+        <a href="tel:+919123456789">+91 91234 56789</a>
+      </p>
+    </div>
 
-  <h3>📞 Phone</h3>
-  <p>
-    +91 98765 43210 <br>
-    +91 91234 56789
-  </p>
+    <div class="contact-card">
+      <h3>📧 Email</h3>
+      <p>
+        <a href="mailto:support@foodrescue.org">support@foodrescue.org</a> <br>
+        <a href="mailto:help@foodrescue.org">help@foodrescue.org</a>
+      </p>
+    </div>
 
-  <h3>📧 Email</h3>
-  <p>
-    support@foodrescue.org <br>
-    help@foodrescue.org
-  </p>
-
-  <h3>⏰ Working Hours</h3>
-  <p>
-    Monday – Saturday <br>
-    9:00 AM to 7:00 PM
-  </p>
-
-</div>
+    <div class="contact-card">
+      <h3>⏰ Working Hours</h3>
+      <p>
+        Monday – Saturday <br>
+        9:00 AM to 7:00 PM
+      </p>
+    </div>
+  </div>
+</main>
 
 <script type="module" src="script.js"></script>
 </body>
