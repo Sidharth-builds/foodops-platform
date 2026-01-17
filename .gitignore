@@ -1,0 +1,32 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs
+*.log
+
+# Build outputs
+dist
+build
+
+# Firebase
+.firebase/
+firebase-debug.log
+
+# VS Code
+.vscode/
+
+# Lock files (optional – keep only one if needed)
+package-lock.json
+yarn.lock
